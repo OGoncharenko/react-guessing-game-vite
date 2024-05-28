@@ -7,12 +7,12 @@ const GuessControl = ({ onGuess }) => {
 
   const handleInputChange = (event) => {
     const newCurrentGuess = event.target.value;
-    setCurrentGuess(newCurrentGuess && Number(newCurrentGuess));
+    setCurrentGuess(newCurrentGuess);
   }
 
   const onSubmitGuess = () => {
     if (currentGuess !== "") {
-      onGuess(currentGuess);
+      onGuess(Number(currentGuess));
       setCurrentGuess("");
     }
   }
